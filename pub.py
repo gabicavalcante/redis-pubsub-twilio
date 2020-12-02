@@ -6,7 +6,7 @@ import json
 redis_conn = redis.Redis(charset="utf-8", decode_responses=True)
  
 def pub():
-    data = {"message": "hello", "from": os.environ.get("TWILIO_PHONE_NUMBER"), "to": "YOUR_TWILIO_NUMBER"}
+    data = {"message": "hello", "from": os.environ.get("TWILIO_PHONE_NUMBER"), "to": "YOUR_NUMBER"}
     redis_conn.publish("channel", json.dumps(data))
     return {}
 
